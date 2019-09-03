@@ -1,9 +1,11 @@
 CheckAppSignature
 =================
 
-[Download CheckAppSignature-1.0.zip](https://github.com/downloads/andreyvit/CheckAppSignature/CheckAppSignature-1.0.zip),
-run, drop .ipa or .app into its window and you'll see the code signature details.
+Run the CheckAppSignature.sh script on the command line and pass it the path to an ipa or an extracted ios app as argument. 
 
+E.g. Run:
+    
+    $ CheckAppSignature.sh /Users/dpich/Downloads/myApp-arm64-debug.ipa
 
 How it works
 ------------
@@ -11,6 +13,10 @@ How it works
 IPA file is extracted into a temp directory, and then
 
     codesign -dvvv /path/to/the.app
+
+and
+
+    codesign -d --entitlements :-
 
 is run.
 
